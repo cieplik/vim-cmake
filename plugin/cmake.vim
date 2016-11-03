@@ -30,7 +30,8 @@ function! s:cmake(...)
 
   if s:build_dir !=""
 
-    let &makeprg='cmake --build ' . shellescape(s:build_dir) . ' --'
+    let &l:makeprg = 'cmake --build ' . shellescape(s:build_dir) . ' --'
+    let &g:makeprg = &l:makeprg
 
     exec 'cd' s:fnameescape(s:build_dir)
 
